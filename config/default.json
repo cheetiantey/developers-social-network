@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://foo123:foo123@developerssocialnetwork.xahp2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://foo123:foo123@developerssocialnetwork.xahp2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+    "jwtSecret": "mySecretToken"
 }
