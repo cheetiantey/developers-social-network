@@ -13,6 +13,8 @@ const User = require('../../models/User');
 // @access  Public
 router.get('/', auth, async (req, res) => {
     try {
+
+        // Find the user and exclude the password in the returned User object
         const user = await User.findById(req.user.id).select('-password');
         res.json(user);
     } catch {
@@ -48,7 +50,8 @@ router.post('/', [
         if (!user) {
             return res.status(400).json({errors: [{ msg: "Invalid credentials" }]});
         }
-
+        
+        // Check if the entered password is correct
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
