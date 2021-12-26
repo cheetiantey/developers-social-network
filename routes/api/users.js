@@ -14,7 +14,7 @@ const User = require('../../models/User');
 router.post('/', [
     check('name', 'Name is required').not().isEmpty(),
     check('email', 'Please enter a valid email').isEmail(),
-    check('password', 'Please enter a password with 8 or more characters').isLength({ min: 6 })
+    check('password', 'Please enter a password with 8 or more characters').isLength({ min: 8 })
 ], async (req, res) => {
     const errors = validationResult(req);
 
